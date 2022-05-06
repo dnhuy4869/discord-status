@@ -2,25 +2,25 @@ const axios = require("axios");
 
 const timer = ms => new Promise(res => setTimeout(res, ms));
 
-const token = "NjA4MjI1MTY2OTY2Nzg0MDAx.YnE9sQ.IAP65W2H7rcXUTtSOCwDZFCEDFE";
-const delayTime = 5000;
+const token = "NjA4MjI1MTY2OTY2Nzg0MDAx.YnJFcg.HOTPtMiNqkFwjFXiNOS8bNvhFMY";
+const delayTime = 3000;
 
 const random = [
     {
-        statusText: "this is first message",
-        iconID: "967299118710022204"
+        statusText: "league of legends time",
+        iconID: "688793966832779324"
     },
     {
-        statusText: "this is 2 message",
-        iconID: "967299118710022204"
+        statusText: "everyone everyone",
+        iconID: "667743534778155008"
     },
     {
-        statusText: "this is 3 message",
-        iconID: "967299118710022204"
+        statusText: "hmmmmmmmmmm",
+        iconID: "864606442521362452"
     },
     {
-        statusText: "this is 4 message",
-        iconID: "967299118710022204"
+        statusText: "hope hope hope",
+        iconID: "910926667738927146"
     },
 ];
 
@@ -50,12 +50,10 @@ const main = async () => {
             console.error("Error when send message");
         }
 
-        var randomIndex = Math.floor(Math.random() * (length - 0 + 1)) + 0;
-        while (randomIndex == index) {
-            randomIndex = Math.floor(Math.random() * (length - 0 + 1)) + 0;
-        }
-
-        index = randomIndex;
+        index++;
+        if (index > length) {
+            index = 0;
+        };
 
         await timer(delayTime);
     }
